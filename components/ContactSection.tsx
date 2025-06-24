@@ -1,170 +1,178 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import { FaGithub, FaLinkedin, FaInstagram, FaMapMarkerAlt, FaPhone, FaPaperPlane } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 import Link from "next/link";
+import { FaGithub, FaLinkedin, FaInstagram, FaMapMarkerAlt, FaPhone, FaPaperPlane, FaCalendarAlt, FaWhatsapp } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 export default function ContactSection() {
-  // Contact info data
+  // Contact information
   const contactInfo = [
     {
-      icon: <FaMapMarkerAlt className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />,
+      icon: <FaMapMarkerAlt className="h-6 w-6 text-primary" />,
       title: "Location",
-      value: "Alex, Egypt"
+      value: "Alexandria, Egypt",
+      bgColor: "bg-primary/10"
     },
     {
-      icon: <MdEmail className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />,
+      icon: <MdEmail className="h-6 w-6 text-primary" />,
       title: "Email",
-      value: "essam.mohamed.dev@gmail.com"
+      value: "essam.mohamed.dev@gmail.com",
+      bgColor: "bg-primary/10"
     },
     {
-      icon: <FaPhone className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />,
+      icon: <FaPhone className="h-6 w-6 text-primary" />,
       title: "Phone",
-      value: "+20 1068446885"
+      value: "+20 1068446885",
+      bgColor: "bg-primary/10"
+    },
+    {
+      icon: <FaCalendarAlt className="h-6 w-6 text-primary" />,
+      title: "Availability",
+      value: "Open for opportunities",
+      bgColor: "bg-primary/10"
     }
   ];
 
-  // Social links data
+  // Social media links
   const socialLinks = [
     {
       href: "https://github.com/DevNexEssam",
-      icon: <FaGithub className="h-4 w-4 sm:h-5 sm:w-5" />,
-      label: "GitHub"
+      icon: <FaGithub className="h-5 w-5" />,
+      label: "GitHub",
+      color: "hover:bg-primary"
     },
     {
       href: "https://www.instagram.com/essam_iam/",
-      icon: <FaInstagram className="h-4 w-4 sm:h-5 sm:w-5" />,
-      label: "Instagram"
+      icon: <FaInstagram className="h-5 w-5" />,
+      label: "Instagram",
+      color: "hover:bg-primary"
     },
     {
       href: "https://www.linkedin.com/in/essam-mohamed-829b27342/",
-      icon: <FaLinkedin className="h-4 w-4 sm:h-5 sm:w-5" />,
-      label: "LinkedIn"
+      icon: <FaLinkedin className="h-5 w-5" />,
+      label: "LinkedIn",
+      color: "hover:bg-primary"
     },
     {
-      href: "mailto:essam.mohamed.dev@gmail.com",
-      icon: <MdEmail className="h-4 w-4 sm:h-5 sm:w-5" />,
-      label: "Email"
+      href: "https://wa.me/201068446885",
+      icon: <FaWhatsapp className="h-5 w-5" />,
+      label: "WhatsApp",
+      color: "hover:bg-primary"
     }
   ];
 
-  // Form fields data
-  const formFields = [
+  // Direct contact buttons
+  const directContact = [
     {
-      type: "text",
-      name: "name",
-      placeholder: "Your name",
-      gridClass: "col-span-2 md:col-span-1"
+      href: "mailto:essam.mohamed.dev@gmail.com",
+      icon: <MdEmail className="h-5 w-5 mr-2" />,
+      text: "Email Me",
+      bg: "bg-primary hover:bg-primary/90"
     },
     {
-      type: "email",
-      name: "email",
-      placeholder: "Your email",
-      gridClass: "col-span-2 md:col-span-1"
-    },
-    {
-      type: "text",
-      name: "subject",
-      placeholder: "Subject of your message",
-      gridClass: "col-span-2"
-    },
-    {
-      type: "textarea",
-      name: "message",
-      placeholder: "Write your message here...",
-      gridClass: "col-span-2"
+      href: "tel:+201068446885",
+      icon: <FaPhone className="h-5 w-5 mr-2" />,
+      text: "Call Me",
+      bg: "bg-secondary hover:bg-secondary/80"
     }
   ];
 
   return (
-    <section id="contact" className="py-12 sm:py-16 md:py-20 bg-background">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-text-primary">Get In Touch</h2>
-          <div className="h-1 w-16 sm:w-20 bg-primary mx-auto"></div>
-          <p className="mt-3 sm:mt-4 text-sm sm:text-base text-text-secondary max-w-2xl mx-auto">
-            Have a project in mind or want to discuss potential opportunities?
-            Feel free to reach out to me using the form below or through my
-            contact information.
+    <section id="contact" className="py-16 sm:py-20 md:py-24 bg-background relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-32 h-32 rounded-full bg-primary/10 blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-40 h-40 rounded-full bg-secondary/10 blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-16 sm:mb-20">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-text-primary">Let's Connect</h2>
+          <div className="h-1.5 w-24 sm:w-28 bg-primary mx-auto rounded-full"></div>
+          <p className="mt-4 sm:mt-5 text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+            Have a project in mind or want to discuss opportunities? I'm always open to talking about creative ideas and new projects.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
-          {/* Contact Information */}
-          <div className="space-y-6 sm:space-y-8">
-            <h3 className="text-xl sm:text-2xl font-semibold text-text-primary">Contact Information</h3>
-            <p className="text-sm sm:text-base text-text-secondary">
-              Feel free to reach out to me through any of the following methods.
-              I'm always open to discussing new projects, creative ideas, or
-              opportunities.
-            </p>
-
-            <div className="space-y-4 sm:space-y-6">
-              {contactInfo.map((item, index) => (
-                <div key={index} className="flex items-start gap-3 sm:gap-4">
-                  <div className="bg-primary/10 p-2 sm:p-3 rounded-full">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h4 className="text-sm sm:text-base font-medium text-text-primary">{item.title}</h4>
-                    <p className="text-xs sm:text-sm text-text-secondary">{item.value}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="pt-6 sm:pt-8">
-              <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-text-primary">Follow Me</h3>
-              <div className="flex justify-center md:justify-start gap-3 sm:gap-4 pt-2 sm:pt-4">
-                {socialLinks.map((social, index) => (
-                  <Link
+        <div className="max-w-5xl mx-auto bg-card rounded-2xl shadow-sm border border-border overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+            {/* Left side - Contact info */}
+            <div className="p-8 sm:p-10">
+              <h3 className="text-2xl sm:text-3xl font-semibold mb-6 text-text-primary">
+                Contact Information
+              </h3>
+              
+              <div className="space-y-6">
+                {contactInfo.map((item, index) => (
+                  <div 
                     key={index}
-                    href={social.href}
-                    target="_blank"
-                    aria-label={social.label}
-                    className="inline-flex items-center text-text-primary justify-center p-1.5 sm:p-2 text-xs sm:text-sm font-medium transition-colors rounded-full border border-border bg-background hover:bg-muted"
+                    className={`flex items-start gap-5 p-4 rounded-xl bg-background transition-all hover:scale-[1.02] border border-border hover:bg-primary-foreground/20`}
                   >
-                    {social.icon}
-                  </Link>
+                    <div className="bg-background p-3 rounded-full shadow-sm">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-medium text-text-primary">{item.title}</h4>
+                      <p className="text-base text-text-secondary mt-1">{item.value}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
-            </div>
-          </div>
 
-          {/* Contact Form */}
-          <div>
-            <div className="bg-card p-5 sm:p-6 md:p-8 rounded-lg shadow-sm sm:shadow-md border border-border">
-              <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-text-primary">Send Me a Message</h3>
-
-              <form className="space-y-4 sm:space-y-6">
-                <div className="flex flex-col md:grid md:grid-cols-2 gap-4 sm:gap-6">
-                  {formFields.map((field, index) => (
-                    <div key={index} className={field.gridClass}>
-                      <label className="block text-xs sm:text-sm text-text-primary mb-1 sm:mb-2 capitalize">{field.name}</label>
-                      {field.type === "textarea" ? (
-                        <textarea
-                          placeholder={field.placeholder}
-                          className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-text-primary min-h-[100px] sm:min-h-[150px]"
-                        ></textarea>
-                      ) : (
-                        <input
-                          type={field.type}
-                          placeholder={field.placeholder}
-                          className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-text-primary"
-                        />
-                      )}
-                    </div>
+              <div className="mt-10">
+                <h4 className="text-xl font-semibold mb-5 text-text-primary">Contact Me Directly</h4>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  {directContact.map((button, index) => (
+                    <Link
+                      key={index}
+                      href={button.href}
+                      className={`${button.bg} px-6 py-3 text-sm text-text-primary rounded-lg transition-all hover:scale-105 flex items-center justify-center shadow hover:shadow-md`}
+                    >
+                      {button.icon}
+                      {button.text}
+                    </Link>
                   ))}
                 </div>
+              </div>
+            </div>
 
-                <button
-                  type="button"
-                  className="w-full px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm bg-primary text-text-primary rounded-md hover:bg-primary/90 transition-colors flex items-center justify-center"
+            {/* Right side - Social media */}
+            <div className="p-8 sm:p-10 bg-background flex flex-col border-t border-border lg:border-t-0 lg:border-l">
+              <div>
+                <h3 className="text-2xl sm:text-3xl font-semibold mb-3 text-text-primary">Social Media</h3>
+                <p className="text-lg text-text-secondary mb-8">
+                  Follow me on social platforms to see my latest work and projects.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 mt-auto">
+                {socialLinks.map((social, index) => (
+                  <div key={index}>
+                    <Link
+                      href={social.href}
+                      target="_blank"
+                      aria-label={social.label}
+                      className={`flex items-center justify-center p-4 rounded-xl bg-card border border-border ${social.color} text-text-primary transition-all hover:scale-105 hover:text-white`}
+                    >
+                      <span className="mr-3">{social.icon}</span>
+                      <span className="font-medium">{social.label}</span>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-12 p-5 rounded-xl bg-primary/10 border border-primary/20 text-center">
+                <FaPaperPlane className="h-8 w-8 text-primary mx-auto mb-3" />
+                <h4 className="text-lg font-medium text-text-primary mb-2">Have a Project Idea?</h4>
+                <p className="text-text-secondary mb-3">Send me a message and I'll get back to you ASAP</p>
+                <Link
+                  href="mailto:essam.mohamed.dev@gmail.com"
+                  className="inline-block px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
                 >
-                  <FaPaperPlane className="mr-2 h-3 w-3 sm:h-4 sm:w-4" /> Send Message
-                </button>
-              </form>
+                  Start Conversation
+                </Link>
+              </div>
             </div>
           </div>
         </div>

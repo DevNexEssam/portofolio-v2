@@ -15,8 +15,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DevEssam",
-  description: "portofolio",
+  title: "Essam Mohamed | Full-Stack Web Developer (Next.js + TypeScript)",
+  description: "Full-Stack Developer specialized in building modern, fast, and scalable web apps using Next.js and TypeScript.",
+  icons: {
+    icon: '/icon.ico',
+  },
 };
 
 export default function RootLayout({
